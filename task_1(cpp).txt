@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vectors>
+
+int main() {
+
+    long long n;
+    cin >> n;
+
+    vector<long long>numbers(n - 1);
+    for(int i = 0; i < n - 1; i++) {
+        cin >> numbers[i];
+    }
+
+    long long clear_sum = n * (n + 1) / 2;
+
+    long long real_sum = 0;
+
+    for (long long num : numbers) {
+        real_sum += num;
+    }
+
+    cout << clear_sum - real_sum << endl;
+    
+    return 0;
+}

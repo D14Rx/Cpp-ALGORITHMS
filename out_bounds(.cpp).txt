@@ -1,0 +1,13 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> valid_vec{10};
+    vector<int> invalid_vec{1234};
+    cout << valid_vec.at(0) << "\n"; // = 1234. (BY ERROR: "Runtime Error". WITHOUT DANGEROUS ERROR BENEATH)
+    for (int i = 0; i < 10; i++) {
+        invalid_vec.at(i) = i; // = std::out_of_range.
+    }
+    cout << valid_vec(0) << "\n";
+}
